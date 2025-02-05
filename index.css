@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVwght@0,100;0,200;0,300;0,4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVdisplay=swap');
+body{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+body.home{
+    background-image: url(assets/home/background-home-desktop.jpg);
+
+}
+body.destination{
+    background-image: url(assets/destination/background-destination-desktop.jpg);
+
+}
+.navbar{
+    width: 100%;
+    background-color: bisqe;
+    height: 136px ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 40px;
+}
+.navbar_logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    padding-left: 64px;
+}
+.navbar_logo hr{
+    flex-grow: 1;
+    height: 2px;
+    width: 80%;
+    margin-left: 20px;
+    border-color: hsl(0, 0%, 100%, 0.25);
+}
+.navbar_menu{
+    height: 98px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    justify-content: end;
+    align-items: center;
+    padding-right: 64px;
+    width: 50%;
+    background-color: hsl(0, 0%, 100%,0.05) ;
+}
+.navbar_menu_item {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: "Barlow Condensed", serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative; /* Nécessaire pour positionner le ::after */
+    padding-bottom: 5px; /* Ajuste l'espace sous le texte */
+}
+
+/* Soulignement animé */
+.navbar_menu_item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Décale le soulignement sous le parent */
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Afficher le soulignement au survol */
+.navbar_menu_item:hover::after {
+    width: 100%;
+}
+
+/* Garder le soulignement sur l'élément actif */
+.navbar_menu_item.active::after {
+    width: 100%;
+}
+
+.navbar_menu_item strong{
+    letter-spacing: 2.7px;
+}
+.main{
+    width: 100%;
+    flex: 1;
+}
+.main-destination{
+    background-color: brown;
+    width: calc(100% - 330px); /* 100% - (165px gauche + 165px droite) */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+.main_hero{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10%;
+    padding: 128px 165px;
+    margin-bottom: 48px;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+.main_hero_text{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    color: white;
+    padding-bottom: 2%;
+}
+.main_hero_text_hook{
+    font-family: "Barlow Condensed", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.main_hero_text_title,.main_palnet_info_title{
+    font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: 9rem;
+  font-style: normal;
+  text-transform:uppercase;
+  color: white;
+}
+.main_hero_text_description, .main_palnet_info_description{
+    font-family: "Barlow", serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    font-style: normal;
+    line-height: 180%;
+    padding-right: 50px;
+    color: white;
+}
+.main_hero_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+.main_hero_button_circle {
+    all: unset;
+    width: 50%;
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    position: relative; /* Nécessaire pour positionner ::before */
+    transition: 0.3s;
+}
+
+/* Ajout du cercle arrière */
+.main_hero_button_circle::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background-color: rgba(255, 255, 255, 0.3); /* Blanc semi-transparent */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%) scale(0); /* Caché par défaut */
+    transition: transform 0.3s ease;
+}
+
+/* Effet au survol */
+.main_hero_button_circle:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Apparition */
+}
+.main_hero_button_circle_text{
+    font-family: "Bellefair", serif;
+    font-weight: 400;
+    font-size: 32px;
+    font-style: normal;
+}

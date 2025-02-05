@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-size: 14px;
+    color: #000;
+    box-sizing: border-box;
+    z-index: 3;
+}
+body{
+    overflow-x: hidden;
+}
+ul li{
+    list-style: none;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+a{
+    text-decoration: none;
+}
