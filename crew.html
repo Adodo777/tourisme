@@ -2,15 +2,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
-    <title>Destination</title>
+    <title>Crew</title>
 </head>
 <body>
     <div class="wrapper crew">
         <header class="navbar">
             <div class="navbar_logo">
                 <div class="logo">
-                    <img src="assets/Subtract.png" alt="">
+                    <a href="index.html">
+                        <img src="assets/Subtract.png" alt="">
+                    </a>
                 </div>
                 <hr>
             </div>
@@ -79,7 +82,7 @@
                         </p>
                     </div>
                     <div class="main-crew_content_left_dot">
-                        <div class="main-crew_content_left_dot_item" data-index="0"></div>
+                        <div class="main-crew_content_left_dot_item active" data-index="0"></div>
                         <div class="main-crew_content_left_dot_item" data-index="1"></div>
                         <div class="main-crew_content_left_dot_item" data-index="2"></div>
                         <div class="main-crew_content_left_dot_item" data-index="3"></div>
@@ -103,6 +106,18 @@
         </section>
     </div>
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    let links = document.querySelectorAll(".navbar_menu_item");
+    let currentPage = window.location.pathname.split("/").pop(); // Récupère le nom du fichier actuel
+
+    links.forEach(link => {
+        if (link.getAttribute("href") === currentPage || (currentPage === "" && link.getAttribute("href") === "index.html")) {
+            link.classList.add("active");
+        }
+    });
+});
+
+
         const content = document.querySelectorAll(".main-crew_content_left_text"); 
         const images = document.querySelectorAll(".main-crew_content_right_image"); 
         const dots = document.querySelectorAll(".main-crew_content_left_dot_item");

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
     <title>Destination</title>
 </head>
@@ -11,7 +12,9 @@
         <header class="navbar">
             <div class="navbar_logo">
                 <div class="logo">
-                    <img src="assets/Subtract.png" alt="">
+                    <a href="index.html">
+                        <img src="assets/Subtract.png" alt="">
+                    </a>
                 </div>
                 <hr>
             </div>
@@ -39,11 +42,10 @@
                 </div>
                 <div class="main_planet_info">
                     <ul class="main_planet_info_menu">
-                        <li class="btn-choix" data-index="0">Mars</li>
+                        <li class="btn-choix active" data-index="0">Mars</li>
                         <li class="btn-choix" data-index="1">Moon</li>
                         <li class="btn-choix" data-index="2">Europa</li>
                         <li class="btn-choix" data-index="3">Titan</li>
-                    
                     </ul>
                     <div class="planet-changeable active" data-index="0">
                         <h1 class="main_palnet_info_title">Mars</h1>
@@ -119,6 +121,18 @@
         </section>
     </div>
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    let links = document.querySelectorAll(".navbar_menu_item");
+    let currentPage = window.location.pathname.split("/").pop(); // Récupère le nom du fichier actuel
+
+    links.forEach(link => {
+        if (link.getAttribute("href") === currentPage || (currentPage === "" && link.getAttribute("href") === "index.html")) {
+            link.classList.add("active");
+        }
+    });
+});
+
+
         const planets = document.querySelectorAll(".planet-changeable"); 
         const images = document.querySelectorAll(".main_planet_image"); 
         const dots = document.querySelectorAll(".btn-choix");

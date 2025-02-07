@@ -10,7 +10,6 @@
 }
 html,body{
     height: 100%;
-
 }
 ul li{
     list-style: none;
@@ -31,7 +30,6 @@ a{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-
 }
 .btn-choix{
     cursor: pointer;
@@ -41,11 +39,9 @@ a{
 }
 .wrapper.home{
     background-image: url(assets/home/background-home-desktop.jpg);
-
 }
 .wrapper.destination{
     background-image: url(assets/destination/background-destination-desktop.jpg);
-
 }
 .wrapper.crew{
     background-image: url(assets/crew/background-crew-desktop.jpg);
@@ -53,6 +49,10 @@ a{
 .wrapper.technology{
     background-image: url(assets/technology/background-technology-desktop.jpg);
 }
+
+
+/*Entete global*/
+
 .navbar{
     width: 100%;
     background-color: bisqe;
@@ -97,40 +97,45 @@ a{
     font-style: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
-    position: relative; /* Nécessaire pour positionner le ::after */
-    padding-bottom: 5px; /* Ajuste l'espace sous le texte */
+    position: relative;
+    padding-bottom: 5px;
 }
-
-/* Soulignement animé */
-.navbar_menu_item::after {
+.navbar_menu_item::after , .btn-choix::after{
     content: "";
     position: absolute;
     left: 0;
-    bottom: -5px; /* Décale le soulignement sous le parent */
+    bottom: -20px;
     width: 0;
     height: 2px;
     background-color: white;
     transition: width 0.3s ease-in-out;
 }
-
-/* Afficher le soulignement au survol */
-.navbar_menu_item:hover::after {
+.btn-choix::after{
+    bottom: -10px;
+}
+.navbar_menu_item:hover::after , .btn-choix:hover::after{
+    width: 100%;
+    background-color: #807d7d;
+}
+.navbar_menu_item.active::after , .btn-choix.active::after{
     width: 100%;
 }
-
-/* Garder le soulignement sur l'élément actif */
-.navbar_menu_item.active::after {
-    width: 100%;
+.navbar_menu_item.active:hover::after, .btn-choix.active:hover::after {
+    width: 100%; 
+    background-color: #ffffff;  
 }
-
 .navbar_menu_item strong{
     letter-spacing: 2.7px;
 }
+
+
+/*Page home*/
+
 .main{
-    width: calc(100% - 330px); /* 100% - (165px gauche + 165px droite) */
+    width: calc(100% - 330px);
     margin: 0 auto;
 }
-.main_hero{
+.main_home{
     display: flex;
     flex-direction: row;
     margin-top: 250px;
@@ -139,14 +144,14 @@ a{
     justify-content: space-between;
     height: 100%;
 }
-.main_hero_text{
+.main_home_text{
     display: flex;
     flex-direction: column;
     width: 50%;
     color: white;
     padding-bottom: 2%;
 }
-.main_hero_text_hook{
+.main_home_text_hook{
     font-family: "Barlow Condensed", serif;
     font-weight: 400;
     font-style: normal;
@@ -154,7 +159,7 @@ a{
     letter-spacing: 4px;
     text-transform: uppercase;
 }
-.main_hero_text_title,.main_palnet_info_title , .main_planet_info_more_item_title, .main-crew_content_left_text_hook, .main-crew_content_left_text_title{
+.main_home_text_title,.main_palnet_info_title , .main_planet_info_more_item_title, .main-crew_content_left_text_hook, .main-crew_content_left_text_title, .main-technology_content_left_text_hook, .main-technology_content_left_text_title{
     font-family: "Bellefair", serif;
     font-weight: 400;
     font-size: 9rem;
@@ -162,7 +167,7 @@ a{
     text-transform:uppercase;
     color: white;
 }
-.main_hero_text_description, .main_palnet_info_description, .main-crew_content_left_text_description{
+.main_home_text_description, .main_palnet_info_description, .main-crew_content_left_text_description, .main-technology_content_left_text_description{
     font-family: "Barlow", serif;
     font-weight: 400;
     font-size: 1.25rem;
@@ -171,7 +176,7 @@ a{
     padding-right: 50px;
     color: white;
 }
-.main_hero_button {
+.main_home_button {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -179,7 +184,7 @@ a{
     height: 100%;
     width: 50%;
 }
-.main_hero_button_circle {
+.main_home_button_circle {
     all: unset;
     width: 50%;
     aspect-ratio: 1/1;
@@ -190,30 +195,26 @@ a{
     align-items: center;
     cursor: pointer;
     z-index: 10;
-    position: relative; /* Nécessaire pour positionner ::before */
+    position: relative;
     transition: 0.3s;
 }
-
-/* Ajout du cercle arrière */
-.main_hero_button_circle::before {
+.main_home_button_circle::before {
     content: "";
     position: absolute;
     width: 120%;
     height: 120%;
-    background-color: rgba(255, 255, 255, 0.3); /* Blanc semi-transparent */
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     top: 50%;
     left: 50%;
     z-index: 0;
-    transform: translate(-50%, -50%) scale(0); /* Caché par défaut */
+    transform: translate(-50%, -50%) scale(0);
     transition: transform 0.3s ease;
 }
-
-/* Effet au survol */
-.main_hero_button_circle:hover::before {
-    transform: translate(-50%, -50%) scale(1); /* Apparition */
+.main_home_button_circle:hover::before {
+    transform: translate(-50%, -50%) scale(1); 
 }
-.main_hero_button_circle_text{
+.main_home_button_circle_text{
     font-family: "Bellefair", serif;
     font-weight: 400;
     font-size: 32px;
@@ -229,8 +230,6 @@ a{
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
-    
-
 }
 .main_title, .main_title strong{
     font-family: "Barlow Condensed", serif;
@@ -255,9 +254,6 @@ a{
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
-}
-.image-changeable{
-    
 }
 .main_planet_image{
     height: 100%;
@@ -316,11 +312,12 @@ a{
 .main_planet_info_more_item_title{
     font-size: 2rem;
 }
+
+
 /* Page crew */
-.main-crew_content{
+.main-crew_content, .main-technology_content{
     display: flex;
     flex-direction: row;
-    
 }
 .main-crew_content_left{
     width: 50%;
@@ -328,7 +325,6 @@ a{
     flex-direction: column;
     justify-content: flex-end;
     gap: 40%;
-
 }
 .main-crew_content_left_text{
     display: none;
@@ -357,10 +353,13 @@ a{
 .main-crew_content_left_dot_item{
     width: 13px;
     height: 13px;
-    background-color: #757373;
+    background-color: #6a6868;
     border-radius: 50%;
 }
-.main-crew_content_left_dot_item:hover , .main-crew_content_left_dot_item.active{
+.main-crew_content_left_dot_item:hover {
+    background-color: #a3a0a0;
+}
+.main-crew_content_left_dot_item.active{
     background-color: #ffffff;
 }
 .main-crew_content_right{
@@ -390,4 +389,77 @@ a{
 .main-crew_content_right_image img{
     width: 100%;
     background-color: linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+}
+
+
+/*Page technology*/
+
+.main-technology{
+    width: auto;
+    margin: 0px;
+    padding-left: 165px;
+    padding-bottom: 60px;
+}
+.main-technology_content{
+    gap: 15px;
+}
+.main-technology_content_left{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.main-technology_content_left_dot{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.main-technology_content_left_dot_item{
+    width: 80px;
+    height: 80px;
+    border: 1px #ffffff solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.main-technology_content_left_dot_item:hover{
+    border-width: 3px;
+}
+.main-technology_content_left_dot_item.active, .main-technology_content_left_dot_item.active span {
+    color: black;
+    background-color: #ffffff;
+}
+.main-technology_content_left_dot_item span{
+    font-size: 30px;
+}
+.main-technology_content_left_text{
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+}
+.main-technology_content_left_text.active{
+    display:flex
+}
+.main-technology_content_left_text_hook{
+    color: #979494;
+    font-size: 2rem;
+}
+.main-technology_content_left_text_title{
+    font-size: 3rem;
+}
+.main-technology_content_right{
+    width: 50%;
+}
+.main-technology_content_right img{
+    object-fit: cover;
+}
+.imagetech-change{
+    display: none;
+}
+.imagetech-change.active{
+    display: block;
 }
