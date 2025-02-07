@@ -1,27 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVwght@0,100;0,200;0,300;0,4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVdisplay=swap');
 *{
     margin: 0;
     padding: 0;
+    position: relative;
+    font-size: 14px;
+    color: #ffffff;
     box-sizing: border-box;
+    z-index: 3;
 }
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVwght@0,100;0,200;0,300;0,4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVdisplay=swap');
-body{
+html,body{
+    height: 100%;
+
+}
+ul li{
+    list-style: none;
+}
+img{
     width: 100%;
-    height: 100vh;
+    height: auto;
+}
+a{
+    text-decoration: none;
+}
+.wrapper{
+    width: 100%;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    box-sizing: border-box;
-    overflow: hidden;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
 
 }
-body.home{
+.btn-choix{
+    cursor: pointer;
+}
+.logo{
+    width: 50px;
+}
+.wrapper.home{
     background-image: url(assets/home/background-home-desktop.jpg);
 
 }
-body.destination{
+.wrapper.destination{
     background-image: url(assets/destination/background-destination-desktop.jpg);
 
 }
@@ -60,11 +82,12 @@ body.destination{
     width: 50%;
     background-color: hsl(0, 0%, 100%,0.05) ;
 }
-.navbar_menu_item {
+.navbar_menu_item , .main_planet_info_menu, .main_planet_info_more_item_hook{
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-family: "Barlow Condensed", serif;
     font-weight: 400;
+    font-size: 1rem;
     font-style: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -98,25 +121,16 @@ body.destination{
     letter-spacing: 2.7px;
 }
 .main{
-    width: 100%;
-    flex: 1;
-}
-.main-destination{
-    background-color: brown;
     width: calc(100% - 330px); /* 100% - (165px gauche + 165px droite) */
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-
 }
 .main_hero{
     display: flex;
     flex-direction: row;
-    padding-top: 10%;
-    padding: 128px 165px;
-    margin-bottom: 48px;
+    margin-top: 250px;
+    margin-bottom: 70px;
     align-items: flex-end;
-    width: 100%;
+    justify-content: space-between;
     height: 100%;
 }
 .main_hero_text{
@@ -128,24 +142,24 @@ body.destination{
 }
 .main_hero_text_hook{
     font-family: "Barlow Condensed", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.75rem;
-  letter-spacing: 4px;
-  text-transform: uppercase;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
-.main_hero_text_title,.main_palnet_info_title{
+.main_hero_text_title,.main_palnet_info_title , .main_planet_info_more_item_title{
     font-family: "Bellefair", serif;
-  font-weight: 400;
-  font-size: 9rem;
-  font-style: normal;
-  text-transform:uppercase;
-  color: white;
+    font-weight: 400;
+    font-size: 9rem;
+    font-style: normal;
+    text-transform:uppercase;
+    color: white;
 }
 .main_hero_text_description, .main_palnet_info_description{
     font-family: "Barlow", serif;
     font-weight: 400;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-style: normal;
     line-height: 180%;
     padding-right: 50px;
@@ -198,4 +212,101 @@ body.destination{
     font-weight: 400;
     font-size: 32px;
     font-style: normal;
+    color: black;
+}
+
+
+/* page destination */
+.main-destination{
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.main_title, .main_title strong{
+    font-family: "Barlow Condensed", serif;
+    font-weight: 400;
+    font-size: 2rem;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.main_title strong {
+    color: rgb(133, 130, 130);
+    font-weight: 600;
+}
+.main_planet{
+    height: 100%;
+    margin: 60px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+.image-changeable{
+    
+}
+.main_planet_image{
+    height: 100%;
+    width: 480px;
+    display: none;
+}
+.main_planet_image.active{
+    display: block;
+}
+.main_planet_image img{
+    width: 100%;
+}
+.main_planet_info{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.planet-changeable{
+    height: 100%;
+    display: flex;
+    margin-top: 70px;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.planet-changeable.active{
+    opacity: 1;
+}
+.main_planet_info_menu{
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+.main_palnet_info_more{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 50px 20px 0px;
+}
+.main_palnet_info_more_item{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.trait{
+    margin: 20px 50px 20px 0px;
+}
+.main_planet_info_menu li, .main_planet_info_more_item_hook{
+    color: rgb(208, 210, 211);
+}
+.main_planet_info_more_item_title{
+    font-size: 2rem;
 }

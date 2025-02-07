@@ -6,49 +6,140 @@
     <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
-<body class="destination">
-    <div class="navbar">
-        <div class="navbar_logo">
-            <img src="assets/Subtract.png" alt="">
-            <hr>
-        </div>
-        <ul class="navbar_menu">
-            <li ><a href="index.html" class="navbar_menu_item"><strong>00</strong> Home</a></li>
-            <li ><a href="#" class="navbar_menu_item"><strong>01</strong> Destination</a></li>
-            <li ><a href="#" class="navbar_menu_item"><strong>02</strong> Crew</a></li>
-            <li ><a href="#" class="navbar_menu_item"><strong>03</strong> Technology</a></li>
-        </ul>
-    </div>
-    <div class="main main-destination">
-        <h2 class="main_title"><strong>01</strong>PICK YOUR DESTINATION</h2>
-        <div class="main_planet">
-            <div class="main_planet_image">
-                <img src="assets/destination/image-moon.png" alt="">
-            </div>
-            <div class="main_planet_info">
-                <ul class="main_planet_info_menu">
-                    <li class="active" data-target="mars">Mars</li>
-                    <li data-target="moon">Moon</li>
-                    <li data-target="europa">Europa</li>
-                    <li data-target="titan">Titan</li>
-                </ul>
-                <h1 class="main_palnet_info_title">Moon</h1>
-                <p class="main_palnet_info_description">See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
-                    regain perspective and come back refreshed. While you’re there, take in some history 
-                    by visiting the Luna 2 and Apollo 11 landing sites.</p>
+<body>
+    <div class="wrapper destination">
+        <header class="navbar">
+            <div class="navbar_logo">
+                <div class="logo">
+                    <img src="assets/Subtract.png" alt="">
+                </div>
                 <hr>
-                <div class="main_palnet_info_more">
-                    <div class="main_palnet_info_more_item">
-                        <span class="main_planet_info_more_item_hook">AVG. DISTANCE</span>
-                        <span class="main_planet_info_more_item_title">384,400 km</span>
+            </div>
+            <ul class="navbar_menu">
+                <li ><a href="index.html" class="navbar_menu_item"><strong>00</strong> Home</a></li>
+                <li ><a href="destination.html" class="navbar_menu_item"><strong>01</strong> Destination</a></li>
+                <li ><a href="#" class="navbar_menu_item"><strong>02</strong> Crew</a></li>
+                <li ><a href="#" class="navbar_menu_item"><strong>03</strong> Technology</a></li>
+            </ul>
+        </header>
+        <section class="main main-destination">
+            <h2 class="main_title"><strong>01</strong>PICK YOUR DESTINATION</h2>
+            <div class="main_planet">
+                <div class="main_planet_image active"  data-index="0">
+                    <img src="assets/destination/image-mars.png" >
+                </div>
+                <div class="main_planet_image" data-index="1">
+                    <img src="assets/destination/image-moon.png" >
+                </div>
+                <div class="main_planet_image" data-index="2">
+                    <img src="assets/destination/image-europa.png" >
+                </div>
+                <div class="main_planet_image" data-index="3">
+                    <img src="assets/destination/image-titan.png">
+                </div>
+                <div class="main_planet_info">
+                    <ul class="main_planet_info_menu">
+                        <li class="btn-choix" data-index="0">Mars</li>
+                        <li class="btn-choix" data-index="1">Moon</li>
+                        <li class="btn-choix" data-index="2">Europa</li>
+                        <li class="btn-choix" data-index="3">Titan</li>
+                    
+                    </ul>
+                    <div class="planet-changeable active" data-index="0">
+                        <h1 class="main_palnet_info_title">Mars</h1>
+                        <p class="main_palnet_info_description">Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
+                            the tallest planetary mountain in our solar system. It’s two and a half times 
+                            the size of Everest!</p>
+                        <hr class="trait">
+                        <div class="main_palnet_info_more">
+                            <div class="main_palnet_info_more_item">
+                                <span class="main_planet_info_more_item_hook">AVG. DISTANCE</span>
+                                <span class="main_planet_info_more_item_title">225 mil. km</span>
+                            </div>
+                            <div class="main_palnet_info_more_item">
+                                <span class="main_planet_info_more_item_hook">Est. travel time</span>
+                                <span class="main_planet_info_more_item_title">9 months</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="main_palnet_info_more_item">
-                        <span class="main_planet_info_more_item_hook">Est. travel time</span>
-                        <span class="main_planet_info_more_item_title">3 days</span>
+                    <div class="planet-changeable" data-index="1">
+                        <h1 class="main_palnet_info_title">Moon</h1>
+                        <p class="main_palnet_info_description">See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
+                            regain perspective and come back refreshed. While you’re there, take in some history 
+                            by visiting the Luna 2 and Apollo 11 landing sites.</p>
+                        <hr class="trait">
+                        <div class="main_palnet_info_more">
+                            <div class="main_palnet_info_more_item">
+                                <span class="main_planet_info_more_item_hook">AVG. DISTANCE</span>
+                                <span class="main_planet_info_more_item_title">384,400 km</span>
+                            </div>
+                            <div class="main_palnet_info_more_item">
+                                <span class="main_planet_info_more_item_hook">Est. travel time</span>
+                                <span class="main_planet_info_more_item_title">3 days</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="planet-changeable" data-index="2">
+                        <h1 class="main_palnet_info_title">Europa</h1>
+                        <p class="main_palnet_info_description">The smallest of the four Galilean moons orbiting Jupiter, Europa is a 
+                            winter lover’s dream. With an icy surface, it’s perfect for a bit of 
+                            ice skating, curling, hockey, or simple relaxation in your snug 
+                            wintery cabin.</p>
+                        <hr class="trait">
+                        <div class="main_palnet_info_more">
+                            <div class="main_palnet_info_more_item">
+                                <span class="main_planet_info_more_item_hook">AVG. DISTANCE</span>
+                                <span class="main_planet_info_more_item_title">628 mil. km</span>
+                            </div>
+                            <div class="main_palnet_info_more_item">
+                                <span class="main_planet_info_more_item_hook">Est. travel time</span>
+                                <span class="main_planet_info_more_item_title">3 years</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="planet-changeable" data-index="3">
+                        <h1 class="main_palnet_info_title">Titan</h1>
+                        <p class="main_palnet_info_description">The only moon known to have a dense atmosphere other than Earth, Titan 
+                            is a home away from home (just a few hundred degrees colder!). As a 
+                            bonus, you get striking views of the Rings of Saturn.</p>
+                        <hr class="trait">
+                        <div class="main_palnet_info_more">
+                            <div class="main_palnet_info_more_item">
+                                <span class="main_planet_info_more_item_hook">AVG. DISTANCE</span>
+                                <span class="main_planet_info_more_item_title">1.6 bil. km</span>
+                            </div>
+                            <div class="main_palnet_info_more_item">
+                                <span class="main_planet_info_more_item_hook">Est. travel time</span>
+                                <span class="main_planet_info_more_item_title">7 years</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
+    <script>
+        const planets = document.querySelectorAll(".planet-changeable"); 
+        const images = document.querySelectorAll(".main_planet_image"); 
+        const dots = document.querySelectorAll(".btn-choix");
+
+        dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+            const index = parseInt(dot.getAttribute("data-index"), 10); 
+
+            if (!isNaN(index) && planets[index] && images[index]) { 
+            // Supprimer la classe "active" de tous les éléments
+            planets.forEach(p => p.classList.remove("active"));
+            images.forEach(img => img.classList.remove("active"));
+            dots.forEach(d => d.classList.remove("active"));
+
+            // Ajouter la classe "active" aux éléments correspondants
+            planets[index].classList.add("active");
+            images[index].classList.add("active");
+            dot.classList.add("active");
+            }
+        });
+        });
+    </script>
 </body>
 </html>
